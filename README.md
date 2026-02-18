@@ -1,3 +1,8 @@
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Scikit-Learn](https://img.shields.io/badge/ML-Scikit--Learn-orange)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
+
 # Lung Cancer Prediction
 
 A machine learning project to predict lung cancer risk using clinical and demographic data.
