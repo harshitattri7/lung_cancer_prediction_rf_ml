@@ -1,0 +1,21 @@
+# Lung Cancer Prediction Project Configuration
+
+data:
+  raw_path: data/raw/
+  processed_path: data/processed/
+  test_size: 0.2
+  random_state: 42
+
+preprocessing:
+  handle_missing: mean
+  scale: standard
+  remove_outliers: true
+
+models:
+  random_state: 42
+  n_jobs: -1
+
+training:
+  epochs: 100
+  batch_size: 32
+  learning_rate: 0.001
