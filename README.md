@@ -12,7 +12,7 @@ This project develops and evaluates multiple machine learning models to predict 
 - **Samples**: 389 patients
 - **Features**: 13 features (smoking status, anxiety, fatigue, allergies, etc.)
 - **Target**: Binary classification (Lung Cancer: Yes/No)
-- **Missing Values**: 0 (clean dataset)
+
 
 ## Directory Structure
 ```
