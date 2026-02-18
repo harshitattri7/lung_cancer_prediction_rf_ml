@@ -84,6 +84,13 @@ python src/models/train_models.py
 - Dataset is clean with no missing values
 - Features are well-distributed across patient demographics
 
+## Future Improvements
+
+- Hyperparameter tuning using GridSearchCV
+- Handling class imbalance using SMOTE
+- Model deployment using Streamlit
+- Feature importance analysis
+
 ## Technologies Used
 
 - Python 3.9+
