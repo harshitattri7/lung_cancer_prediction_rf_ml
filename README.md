@@ -69,10 +69,14 @@ python src/models/train_models.py
 
 ## Model Results
 
-| Model | Accuracy | Precision | Recall | AUC-ROC |
-|-------|----------|-----------|--------|---------|
-| Logistic Regression | 96.77% | 98.33% | 98.33% | 0.9167 |
-| Random Forest | 96.77% | 98.33% | 98.33% | 0.9583 ⭐ |
+| Model | Accuracy | Precision | Recall | AUC-ROC | Confusion Matrix |
+|-------|----------|-----------|--------|---------|------------------|
+| Logistic Regression | 96.77% | 98.33% | 98.33% | 0.9167 | [[1, 1], [1, 59]] |
+| Random Forest | 96.77% | 98.33% | 98.33% | 0.9583 ⭐ | [[1, 1], [1, 59]] |
+
+**Confusion Matrix Interpretation:**
+- True Negatives: 1 | False Positives: 1
+- False Negatives: 1 | True Positives: 59
 
 **Best Model**: Random Forest with 96.77% accuracy and 0.9583 AUC-ROC score
 
