@@ -7,7 +7,6 @@ env/
 .idea/
 data/raw/*.csv
 data/processed/*.csv
-models/*.pkl
 models/*.h5
 .env
 .DS_Store
