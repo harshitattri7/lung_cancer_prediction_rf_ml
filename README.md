@@ -8,7 +8,7 @@
 ## Live demo 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://harshitattri7-lung-cancer-prediction-rf-ml-streamlit-app-wu4ko9.streamlit.app/)
 
-** Try the App Here:**
+** Try the App Here : 
 https://harshitattri7-lung-cancer-prediction-rf-ml-streamlit-app-wu4ko9.streamlit.app/
 
 A machine learning project to predict lung cancer risk using clinical and demographic data.
