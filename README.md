@@ -18,8 +18,8 @@ This project develops and evaluates multiple machine learning models to predict 
 - **Features**: 13 features (smoking status, anxiety, fatigue, allergies, etc.)
 - **Target**: Binary classification (Lung Cancer: Yes/No)
 
-
 ## Directory Structure
+
 ```
 lung-cancer-prediction/
 ├── data/
@@ -39,18 +39,21 @@ lung-cancer-prediction/
 ## Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <your-repo-url>
 cd lung-cancer-prediction
 ```
 
 2. Create virtual environment:
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
 3. Install dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -58,27 +61,37 @@ pip install -r requirements.txt
 ## Usage
 
 ### Exploratory Data Analysis
+
 ```bash
 python notebooks/01_exploratory_data_analysis.py
 ```
 
 ### Train Models
+
 ```bash
 python src/models/train_models.py
 ```
 
-## Model Results
+## 🎯 Recent Improvements (Latest)
 
-| Model | Accuracy | Precision | Recall | AUC-ROC | Confusion Matrix |
-|-------|----------|-----------|--------|---------|------------------|
-| Logistic Regression | 96.77% | 98.33% | 98.33% | 0.9167 | [[1, 1], [1, 59]] |
-| Random Forest | 96.77% | 98.33% | 98.33% | 0.9583 ⭐ | [[1, 1], [1, 59]] |
+This project has been enhanced with better handling of class imbalance:
 
-**Confusion Matrix Interpretation:**
-- True Negatives: 1 | False Positives: 1
-- False Negatives: 1 | True Positives: 59
+- ✅ **Stratified Train-Test Split** - Balanced class distribution in train/test sets
+- ✅ **Class Weight Balancing** - Random Forest with `class_weight='balanced'`
+- ✅ **Better Evaluation Metrics** - Now showing true cancer detection rate (recall)
 
-**Best Model**: Random Forest with 96.77% accuracy and 0.9583 AUC-ROC score
+📖 **See [IMPROVEMENTS.md](IMPROVEMENTS.md) for detailed analysis and performance comparison**
+
+## Model Results (Improved)
+
+| Model               | Accuracy | Precision | Recall | AUC-ROC   | Confusion Matrix  |
+| ------------------- | -------- | --------- | ------ | --------- | ----------------- |
+| Logistic Regression | 90.32%   | 94.44%    | 94.44% | 0.9468    | [[5, 3], [3, 51]] |
+| Random Forest       | 88.71%   | 92.73%    | 94.44% | 0.9502 ⭐ | [[4, 4], [3, 51]] |
+
+**Key Insight:** Recall maintained at **94.44%** (strong cancer detection) with more honest metrics due to balanced evaluation set
+
+**Best Model**: Random Forest with 0.9502 AUC-ROC and 94.44% cancer detection rate
 
 ## Key Findings
 
