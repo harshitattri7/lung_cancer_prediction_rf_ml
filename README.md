@@ -148,14 +148,6 @@ This project has been enhanced with better handling of class imbalance:
 - Dataset is clean with no missing values
 - Features are well-distributed across patient demographics
 
-## 🛠 How to Run Locally
-
-```bash
-git clone https://github.com/harshitattri7/lung_cancer_prediction_RF_ML.git
-cd lung_cancer_prediction_RF_ML
-pip install -r requirements.txt
-streamlit run streamlit_app.py
-
 ## Future Improvements
 
 - Hyperparameter tuning using GridSearchCV
@@ -186,3 +178,11 @@ Harshit Attri (harshitattri0007@gmail.com)
 ## Acknowledgments
 
 - Dataset source:(KAGGLE) Survey Lung Cancer
+
+## 🛠 How to Run Locally
+
+```bash
+git clone https://github.com/harshitattri7/lung_cancer_prediction_RF_ML.git
+cd lung_cancer_prediction_RF_ML
+pip install -r requirements.txt
+streamlit run streamlit_app.py
