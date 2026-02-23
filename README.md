@@ -5,7 +5,7 @@
 
 # Lung Cancer Prediction
 
-## Liv demo 
+## Live demo 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://harshitattri7-lung-cancer-prediction-rf-ml-streamlit-app-wu4ko9.streamlit.app/)
 
 ** Try the App Here:**
