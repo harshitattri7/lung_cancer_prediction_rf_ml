@@ -60,17 +60,39 @@ pip install -r requirements.txt
 
 ## Usage
 
-### Exploratory Data Analysis
+### Option 1: Web App (Easiest) 🌐
+
+Run the interactive Streamlit web application:
+
+```bash
+pip install -r requirements_streamlit.txt
+streamlit run streamlit_app.py
+```
+
+This launches a user-friendly web interface where you can:
+
+- Input patient information
+- Get instant predictions
+- View confidence scores
+- See model performance metrics
+
+### Option 2: Command Line
+
+#### Exploratory Data Analysis
 
 ```bash
 python notebooks/01_exploratory_data_analysis.py
 ```
 
-### Train Models
+#### Train Models
 
 ```bash
 python src/models/train_models.py
 ```
+
+#### Use Deployed Model
+
+See [MODEL_DEPLOYMENT.md](MODEL_DEPLOYMENT.md) for Python code examples
 
 ## 🎯 Recent Improvements (Latest)
 
