@@ -33,6 +33,16 @@ This project develops and evaluates multiple machine learning models to predict 
 - **Features**: 13 features (smoking status, anxiety, fatigue, allergies, etc.)
 - **Target**: Binary classification (Lung Cancer: Yes/No)
 
+## 📊 Model Performance
+
+| Metric | Score |
+|--------|-------|
+| Accuracy | 88.7% |
+| Recall (Cancer Detection Rate) | 94.34% |
+| AUC-ROC | 0.95 |
+
+The model prioritizes **high recall** to minimize false negatives in cancer prediction.
+
 ## Directory Structure
 
 ```
@@ -137,6 +147,14 @@ This project has been enhanced with better handling of class imbalance:
 - Random Forest slightly outperforms Logistic Regression with better AUC-ROC
 - Dataset is clean with no missing values
 - Features are well-distributed across patient demographics
+
+## 🛠 How to Run Locally
+
+```bash
+git clone https://github.com/harshitattri7/lung_cancer_prediction_RF_ML.git
+cd lung_cancer_prediction_RF_ML
+pip install -r requirements.txt
+streamlit run streamlit_app.py
 
 ## Future Improvements
 
