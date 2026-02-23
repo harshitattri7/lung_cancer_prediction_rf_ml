@@ -82,7 +82,7 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("## 📋 Features Used")
     st.markdown("""
-    The model uses 13 clinical and demographic features:
+    The model uses 15 clinical and demographic features:
     1. Gender
     2. Age
     3. Smoking Status
@@ -96,22 +96,20 @@ with st.sidebar:
     11. Alcohol Consuming
     12. Coughing
     13. Shortness of Breath
+    14. Swallowing Difficulty
+    15. Chest Pain
     """)
 
 # Create two columns for input
 col1, col2 = st.columns(2)
 
-# Define feature names in order
+# Define feature names in order (must match training data CSV exactly - 15 features)
 feature_names = [
     'GENDER', 'AGE', 'SMOKING', 'YELLOW_FINGERS', 'ANXIETY',
-    'PEER_PRESSURE', 'CHRONIC_DISEASE', 'FATIGUE', 'ALLERGY',
-    'WHEEZING', 'ALCOHOL_CONSUMING', 'COUGHING', 'SHORTNESS_OF_BREATH'
+    'PEER_PRESSURE', 'CHRONIC DISEASE', 'FATIGUE ', 'ALLERGY ',
+    'WHEEZING', 'ALCOHOL CONSUMING', 'COUGHING', 'SHORTNESS OF BREATH',
+    'SWALLOWING DIFFICULTY', 'CHEST PAIN'
 ]
-
-categorical_features = ['GENDER', 'SMOKING', 'YELLOW_FINGERS', 'ANXIETY', 
-                        'PEER_PRESSURE', 'CHRONIC_DISEASE', 'FATIGUE', 
-                        'ALLERGY', 'WHEEZING', 'ALCOHOL_CONSUMING', 'COUGHING', 
-                        'SHORTNESS_OF_BREATH']
 
 # Input form
 st.markdown("## 📝 Patient Information")
@@ -138,6 +136,8 @@ with col2:
     alcohol = st.selectbox("Alcohol Consuming", ["Yes", "No"], key="alcohol")
     coughing = st.selectbox("Coughing", ["Yes", "No"], key="coughing")
     shortness = st.selectbox("Shortness of Breath", ["Yes", "No"], key="shortness")
+    swallowing = st.selectbox("Swallowing Difficulty", ["Yes", "No"], key="swallowing")
+    chest_pain = st.selectbox("Chest Pain", ["Yes", "No"], key="chest_pain")
 
 # Prepare data for prediction
 yes_no_mapping = {"Yes": 1, "No": 0}
@@ -150,13 +150,15 @@ input_data = {
     'YELLOW_FINGERS': yes_no_mapping[yellow_fingers],
     'ANXIETY': yes_no_mapping[anxiety],
     'PEER_PRESSURE': yes_no_mapping[peer_pressure],
-    'CHRONIC_DISEASE': yes_no_mapping[chronic_disease],
-    'FATIGUE': yes_no_mapping[fatigue],
-    'ALLERGY': yes_no_mapping[allergy],
+    'CHRONIC DISEASE': yes_no_mapping[chronic_disease],
+    'FATIGUE ': yes_no_mapping[fatigue],
+    'ALLERGY ': yes_no_mapping[allergy],
     'WHEEZING': yes_no_mapping[wheezing],
-    'ALCOHOL_CONSUMING': yes_no_mapping[alcohol],
+    'ALCOHOL CONSUMING': yes_no_mapping[alcohol],
     'COUGHING': yes_no_mapping[coughing],
-    'SHORTNESS_OF_BREATH': yes_no_mapping[shortness]
+    'SHORTNESS OF BREATH': yes_no_mapping[shortness],
+    'SWALLOWING DIFFICULTY': yes_no_mapping[swallowing],
+    'CHEST PAIN': yes_no_mapping[chest_pain]
 }
 
 # Make prediction
@@ -166,8 +168,27 @@ with col_btn1:
     predict_button = st.button("🔍 Analyze Patient", use_container_width=True)
 
 if predict_button:
-    # Prepare data
-    df_input = pd.DataFrame([input_data])
+    # Prepare data in exact order of feature_names
+    input_values = [
+        input_data['GENDER'],
+        input_data['AGE'],
+        input_data['SMOKING'],
+        input_data['YELLOW_FINGERS'],
+        input_data['ANXIETY'],
+        input_data['PEER_PRESSURE'],
+        input_data['CHRONIC DISEASE'],
+        input_data['FATIGUE '],
+        input_data['ALLERGY '],
+        input_data['WHEEZING'],
+        input_data['ALCOHOL CONSUMING'],
+        input_data['COUGHING'],
+        input_data['SHORTNESS OF BREATH'],
+        input_data['SWALLOWING DIFFICULTY'],
+        input_data['CHEST PAIN']
+    ]
+    
+    # Create DataFrame with correct column names and order
+    df_input = pd.DataFrame([input_values], columns=feature_names)
     X_scaled = scaler.transform(df_input)
     
     # Get predictions
