@@ -16,6 +16,10 @@ Experience the deployed Lung Cancer Risk Prediction web application below:
 ** Try the App Here : 
 https://harshitattri7-lung-cancer-prediction-rf-ml-streamlit-app-wu4ko9.streamlit.app/
 
+## 📸 Application Preview
+
+![App Screenshot](app_screenshot.png)
+
 A machine learning project to predict lung cancer risk using clinical and demographic data.
 
 ## Project Overview
