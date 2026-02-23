@@ -5,8 +5,8 @@ env/
 .venv
 .vscode/
 .idea/
-*.csv
-*.xlsx
+data/raw/*.csv
+data/processed/*.csv
 models/*.pkl
 models/*.h5
 .env
