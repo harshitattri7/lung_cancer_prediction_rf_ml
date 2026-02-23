@@ -5,9 +5,14 @@
 
 # Lung Cancer Prediction
 
-## Live demo 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://harshitattri7-lung-cancer-prediction-rf-ml-streamlit-app-wu4ko9.streamlit.app/)
+## 🚀 Live Demo
 
+Experience the deployed Lung Cancer Risk Prediction web application below:
+
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://harshitattri7-lung-cancer-prediction-rf-ml-streamlit-app-wu4ko9.streamlit.app)
+
+🔗 **Direct Link:**  
+https://harshitattri7-lung-cancer-prediction-rf-ml-streamlit-app-wu4ko9.streamlit.app
 ** Try the App Here : 
 https://harshitattri7-lung-cancer-prediction-rf-ml-streamlit-app-wu4ko9.streamlit.app/
 
