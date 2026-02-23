@@ -11,7 +11,11 @@ class ModelTrainer:
     def __init__(self):
         self.models = {
             'Logistic Regression': LogisticRegression(random_state=42, max_iter=1000),
-            'Random Forest': RandomForestClassifier(n_estimators=100, random_state=42)
+            'Random Forest': RandomForestClassifier(
+                n_estimators=100,
+                random_state=42,
+                class_weight='balanced'
+            )
         }
         self.results = {}
     
@@ -42,7 +46,8 @@ class ModelTrainer:
                 'Confusion Matrix': cm
             }
             
-            print(f"✓ {name} - Accuracy: {accuracy:.4f}, AUC: {auc:.4f}\n")
+            print(f"✓ {name} - Accuracy: {accuracy:.4f}, AUC: {auc:.4f}")
+            print(f"Recall (Cancer class): {recall:.4f}\n")
     
     def display_results(self):
         """Display results in a formatted table"""
@@ -84,7 +89,10 @@ if __name__ == "__main__":
     print(y.value_counts())
     
     X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.2, random_state=42
+        X, y,
+        test_size=0.2,
+        random_state=42,
+        stratify=y
     )
     
     scaler = StandardScaler()
